@@ -11,15 +11,10 @@ import 'js_predictor_stub.dart'
 if (dart.library.js) 'js_predictor_web.dart';
 
 void main() {
-  final isWeb = kIsWeb;
-  final isReleaseMode = kReleaseMode;
-  runApp(
-    isWeb && !isReleaseMode
-        ? DevicePreview(
+  runApp(DevicePreview(
       enabled: true,
       builder: (context) => const MyApp(),
     )
-        : const MyApp(),
   );
 }
 
